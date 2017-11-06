@@ -1,0 +1,50 @@
+{
+  "name": "vue-test-loader",
+  "version": "1.0.0",
+  "description": "Test loader for webpack",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint index.js test",
+    "test": "webpack --config test/webpack.test.conf.js",
+    "test:options": "webpack --config test/webpack.options.conf.js",
+    "unit": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eddyerburgh/vue-test-loader.git"
+  },
+  "keywords": [
+    "vue"
+  ],
+  "author": "Edd Yerburgh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eddyerburgh/vue-test-loader/issues"
+  },
+  "homepage": "https://github.com/eddyerburgh/vue-test-loader#readme",
+  "devDependencies": {
+    "babel-jest": "^21.2.0",
+    "babel-preset-env": "^1.6.1",
+    "eslint": "^4.10.0",
+    "eslint-plugin-vue": "^3.13.1",
+    "jest": "^21.2.1",
+    "vue": "^2.5.3",
+    "vue-jest": "^1.0.2",
+    "vue-loader": "^13.4.0",
+    "vue-template-compiler": "^2.5.3",
+    "vue-test-utils": "^1.0.0-beta.4",
+    "webpack": "^3.8.1"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "vue"
+    ],
+    "transform": {
+      "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
+      ".*\\.(vue)$": "<rootDir>/node_modules/vue-jest"
+    },
+    "mapCoverage": true
+  }
+}

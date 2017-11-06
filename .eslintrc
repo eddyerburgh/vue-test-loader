@@ -1,0 +1,10 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:vue/recommended"
+  ],
+  "env": {
+    "node": true,
+    "jest": true
+  }
+}
