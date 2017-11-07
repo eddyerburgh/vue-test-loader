@@ -21,3 +21,4 @@ pids
 *.pid.lock
 
 node_modules
+dist

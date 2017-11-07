@@ -11,6 +11,6 @@ module.exports = function(source) {
   }
 
   const path = `${dir}/${filename}${extension}`
-  fs.writeFileSync(path, source.replace(/('..\/)/, "'../../").replace(/('.\/)/, "'../").trim())
+  fs.writeFileSync(path, source.replace(/('..\/)/g, "'../../").replace(/('.\/)/g, "'../").trim())
   return source
 };
