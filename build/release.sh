@@ -17,6 +17,6 @@ then
   git push origin refs/tags/v$VERSION
   git push
   npm publish
-  npm run release
+  npm run release:github
   npm run release:note "$VERSION"
 fi

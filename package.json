@@ -6,6 +6,7 @@
   "scripts": {
     "lint": "eslint index.js test",
     "release": "build/release.sh",
+    "release:github": "release",
     "release:note": "node build/gen-release-note.js",
     "test": "webpack --config test/webpack.test.conf.js",
     "test:options": "webpack --config test/webpack.options.conf.js",
