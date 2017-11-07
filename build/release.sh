@@ -3,7 +3,7 @@ echo "Enter release version: "
 read VERSION
 
 read -p "Releasing $VERSION - are you sure? (y/n)" -n 1 -r
-echo    # (optional) move to a new line
+
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
   echo "Releasing $VERSION ..."
@@ -17,6 +17,7 @@ then
   git push origin refs/tags/v$VERSION
   git push
   npm publish
-  npm run release:github
   npm run release:note "$VERSION"
+  cat RELEASE_NOTE.md | cat - CHANGELOG.md > /tmp/out && mv /tmp/out CHANGELOG.md
+  rm RELEASE_NOTE.md
 fi
