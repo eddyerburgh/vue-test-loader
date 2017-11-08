@@ -58,3 +58,7 @@ describe('ExampleComponent', () => {
 vue-test-loader will create a `.spec.js` file in a `__tests__` directory inside the component directory.
 
 This works best with Jest.
+
+## Examples
+
+You can see an example project using Jest [here](https://github.com/eddyerburgh/vue-test-loader-example)
