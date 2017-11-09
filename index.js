@@ -8,7 +8,7 @@ module.exports = function(source) {
 
   const filename = this.resourcePath.substr(this.resourcePath.lastIndexOf('/') + 1).split('.')[0]
 
-  const extension = options.extension || '.spec.js'
+  const extension = (options && options.extension) || '.spec.js'
   const dir = `${this.context}/__tests__`
 
   if (!fs.existsSync(dir)){
