@@ -59,6 +59,29 @@ vue-test-loader will create a `.spec.js` file in a `__tests__` directory inside 
 
 This works best with Jest.
 
+## Options
+
+| Name        | Description           | Default  |
+| ------------- | ------------- | ----- |
+| extension      | string of file extension | '.spec.js' |
+
+```
+{
+  test: /\.vue$/,
+  loader: 'vue-loader',
+  options: {
+    loaders: {
+      'test': [{
+          loader: path.resolve(__dirname,'../index.js'),
+          options: {
+              extension: '.test.js'
+          }
+      }]
+    },
+  }
+}
+```
+
 ## Examples
 
 You can see an example project using Jest [here](https://github.com/eddyerburgh/vue-test-loader-example)
