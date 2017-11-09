@@ -1,6 +1,6 @@
 {
   "name": "vue-test-loader",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Test loader for webpack",
   "main": "index.js",
   "scripts": {
