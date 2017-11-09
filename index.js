@@ -1,4 +1,6 @@
 const fs = require('fs')
+const babel = require('babel-core')
+const babelPluginTransformRelativePaths = require('babel-plugin-transform-relative-paths')
 
 module.exports = function(source) {
   const filename = this.resourcePath.substr(this.resourcePath.lastIndexOf('/') + 1).split('.')[0]
@@ -10,7 +12,9 @@ module.exports = function(source) {
       fs.mkdirSync(dir);
   }
 
+  const code = babel.transform(source, {plugins: [babelPluginTransformRelativePaths]}).code;
+
   const path = `${dir}/${filename}${extension}`
-  fs.writeFileSync(path, source.replace(/('..\/)/g, "'../../").replace(/('.\/)/g, "'../").trim())
+  fs.writeFileSync(path, code)
   return source
 };

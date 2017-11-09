@@ -24,6 +24,10 @@
     "url": "https://github.com/eddyerburgh/vue-test-loader/issues"
   },
   "homepage": "https://github.com/eddyerburgh/vue-test-loader#readme",
+  "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-plugin-transform-relative-paths": "^0.1.0"
+  },
   "devDependencies": {
     "babel-jest": "^21.2.0",
     "babel-preset-env": "^1.6.1",
