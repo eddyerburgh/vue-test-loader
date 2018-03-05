@@ -7,7 +7,7 @@ const path = require('path')
 module.exports = function(source) {
   const options = loaderUtils.getOptions(this);
 
-  const filename = parse(this.resourcePath).name
+  const filename = path.parse(this.resourcePath).name
 
   const extension = (options && options.extension) || '.spec.js'
   const dir = `${this.context}/__tests__`
