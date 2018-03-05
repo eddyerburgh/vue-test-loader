@@ -2,11 +2,12 @@ const fs = require('fs')
 const babel = require('babel-core')
 const babelPluginTransformRelativePaths = require('babel-plugin-transform-relative-paths')
 const loaderUtils = require('loader-utils')
+const path = require('path')
 
 module.exports = function(source) {
   const options = loaderUtils.getOptions(this);
 
-  const filename = this.resourcePath.substr(this.resourcePath.lastIndexOf('/') + 1).split('.')[0]
+  const filename = path.parse(this.resourcePath).name
 
   const extension = (options && options.extension) || '.spec.js'
   const dir = `${this.context}/__tests__`
@@ -17,7 +18,7 @@ module.exports = function(source) {
 
   const code = babel.transform(source, {plugins: [babelPluginTransformRelativePaths]}).code;
 
-  const path = `${dir}/${filename}${extension}`
-  fs.writeFileSync(path, code)
+  const dest = `${dir}/${filename}${extension}`
+  fs.writeFileSync(dest, code)
   return source
 };
