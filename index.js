@@ -19,6 +19,6 @@ module.exports = function(source) {
   const code = babel.transform(source, {plugins: [babelPluginTransformRelativePaths]}).code;
 
   const dest = `${dir}/${filename}${extension}`
-  fs.writeFileSync(path, code)
+  fs.writeFileSync(dest, code)
   return source
 };
