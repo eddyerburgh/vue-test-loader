@@ -13,11 +13,12 @@ then
 
   npm version $VERSION --message "release: $VERSION"
 
+  cat RELEASE_NOTE.md | cat - CHANGELOG.md > /tmp/out && mv /tmp/out CHANGELOG.md
+  rm RELEASE_NOTE.md
+
   # publish
   git push origin refs/tags/v$VERSION
   git push
   npm publish
   npm run release:note "$VERSION"
-  cat RELEASE_NOTE.md | cat - CHANGELOG.md > /tmp/out && mv /tmp/out CHANGELOG.md
-  rm RELEASE_NOTE.md
 fi
